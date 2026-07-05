@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>پورت استخدام مهر · KaratShod Click</title>
+  <link rel="stylesheet" href="/ports/mehr-hiring/assets/mehr.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="nav">
+        <div class="brand"><div class="logo">M</div><div><h1 id="portTitleTop">پورت استخدام مهر</h1><p>Connected to my.karatshod.click</p></div></div>
+        <a class="btn secondary" style="width:auto;padding-inline:16px" href="/">بازگشت به پنل اصلی</a>
+      </div>
+      <div class="grid">
+        <div class="card pad">
+          <span class="badge" id="portId">PORT-MEHR-HIRING-001</span>
+          <h2 class="title" id="portTitle">فرم ثبت درخواست همکاری</h2>
+          <p class="text">این صفحه یک پورت متصل به پنل مادر است. بعد از ثبت، برای هر کاربر یک UID مخصوص همان پورت صادر می‌شود.</p>
+          <div class="status warning" id="disclaimer">این نسخه دمو و مستقل است و بدون مجوز رسمی نباید به عنوان سامانه رسمی هیچ نهاد یا سازمان معرفی شود.</div>
+          <div class="status" id="policyText">اطلاعات فنی فقط با رضایت و به‌صورت هش‌شده برای امنیت همان پورت ذخیره می‌شود.</div>
+        </div>
+        <form class="card pad" id="applyForm">
+          <h2>ثبت درخواست و صدور UID</h2>
+          <div class="row">
+            <div class="field"><label>نام و نام خانوادگی</label><input name="fullName" required placeholder="مثلاً: علی رضایی" /></div>
+            <div class="field"><label>شماره موبایل</label><input name="mobile" required inputmode="tel" placeholder="09..." /></div>
+          </div>
+          <div class="row">
+            <div class="field"><label>شناسه اختیاری</label><input name="nationalCode" inputmode="numeric" placeholder="اختیاری" /></div>
+            <div class="field"><label>عنوان همکاری</label><input name="jobTitle" placeholder="مثلاً: کارشناس خدمات" /></div>
+          </div>
+          <div class="field"><label>توضیح کوتاه</label><textarea name="notes" placeholder="توضیح کوتاه درباره درخواست"></textarea></div>
+          <label class="check"><input type="checkbox" name="consentDevice" required><span id="consentText">با صدور UID و ذخیره حداقلی اطلاعات فنی هش‌شده برای امنیت حساب موافقم.</span></label>
+          <button class="btn" type="submit">ثبت درخواست و دریافت UID</button>
+          <div class="status hidden" id="result"></div>
+        </form>
+      </div>
+    </section>
+    <section class="card pad">
+      <h2>پیگیری UID</h2>
+      <form id="trackForm" class="row">
+        <input name="uid" placeholder="مثلاً MEHR-20260705-AB12CD34" />
+        <button class="btn" type="submit">بررسی وضعیت</button>
+      </form>
+      <div class="status hidden" id="trackResult"></div>
+    </section>
+    <footer class="footer">KaratShod Click · UID Port System · Netlify Ready</footer>
+  </main>
+  <script src="/ports/mehr-hiring/assets/mehr.js"></script>
+</body>
+</html>
