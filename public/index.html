@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>پنل مرکزی KaratShod Click</title>
+  <meta name="description" content="پنل Netlify برای مدیریت پورت‌ها، UID کاربران و قالب استخدام مهر" />
+  <link rel="stylesheet" href="/assets/panel.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo">KS</div>
+          <div>
+            <h1>KaratShod Click Control</h1>
+            <p>Netlify + GitHub Ready · بدون cPanel</p>
+          </div>
+        </div>
+        <span class="pill" id="apiState">در حال بررسی API...</span>
+      </div>
+
+      <div class="grid" id="publicIntro">
+        <div class="card pad">
+          <h2 class="heroTitle" id="siteTitle">پنل مرکزی KaratShod Click</h2>
+          <p class="heroText" id="siteSubtitle">مدیریت پورت‌ها، UID کاربران، قالب استخدام مهر و اتصال‌های سرویس.</p>
+          <div class="actions">
+            <a class="btn" href="/ports/mehr-hiring/">باز کردن قالب استخدام مهر</a>
+            <a class="btn secondary" id="downloadBtn" href="#">دانلود اپلیکیشن</a>
+          </div>
+          <div class="status alert small" id="officialNote">حالت رسمی خاموش است. این نسخه برای نمونه/دمو و آماده‌سازی فنی است.</div>
+        </div>
+        <div class="card pad loginBox">
+          <h2>ورود مدیر</h2>
+          <p class="muted small">ورود از طریق متغیرهای محیطی Netlify انجام می‌شود: <span class="code">ADMIN_USER</span> و <span class="code">ADMIN_PASSWORD</span></p>
+          <form id="loginForm">
+            <div class="field"><label>نام کاربری</label><input name="username" autocomplete="username" value="admin" /></div>
+            <div class="field"><label>رمز عبور</label><input name="password" type="password" autocomplete="current-password" placeholder="رمز Netlify Env" /></div>
+            <button class="btn" type="submit">ورود به مدیریت</button>
+          </form>
+          <div class="status hidden" id="loginStatus"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel hidden" id="adminPanel">
+      <div class="topbar">
+        <div>
+          <h2>داشبورد مدیریت اصلی</h2>
+          <p class="muted">مدیریت سرویس‌ها و پورت‌ها از همین صفحه انجام می‌شود.</p>
+        </div>
+        <button class="btn danger" id="logoutBtn">خروج</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="countSubmissions">0</b><span>درخواست ثبت‌شده</span></div>
+        <div class="stat"><b id="countPorts">1</b><span>پورت فعال/تعریف‌شده</span></div>
+        <div class="stat"><b id="countModules">0</b><span>ماژول فعال</span></div>
+        <div class="stat"><b id="officialMode">خاموش</b><span>Official Mode</span></div>
+      </div>
+      <div class="columns">
+        <form class="card pad" id="configForm">
+          <h2>تنظیمات پنل و پورت مهر</h2>
+          <div class="field"><label>عنوان پنل</label><input name="siteTitle" /></div>
+          <div class="field"><label>زیرعنوان پنل</label><textarea name="siteSubtitle"></textarea></div>
+          <div class="field"><label>لینک دانلود اپلیکیشن</label><input name="downloadUrl" placeholder="https://.../app.apk" /></div>
+          <div class="field"><label>آدرس Telegram Relay اختیاری</label><input name="telegramRelayUrl" placeholder="https://..." /></div>
+          <div class="field"><label>عنوان پورت استخدام مهر</label><input name="mehrTitle" /></div>
+          <div class="field"><label>متن وضعیت بعد از ثبت درخواست</label><textarea name="statusText"></textarea></div>
+          <div class="field"><label>متن هشدار/مجوز</label><textarea name="disclaimer"></textarea></div>
+          <h3>ماژول‌ها</h3>
+          <div class="switches" id="switches"></div>
+          <div class="actions"><button class="btn" type="submit">ذخیره تنظیمات</button><a class="btn secondary" href="/ports/mehr-hiring/" target="_blank">مشاهده پورت</a></div>
+          <div class="status hidden" id="saveStatus"></div>
+        </form>
+        <div class="card pad">
+          <h2>آخرین UIDها و درخواست‌ها</h2>
+          <p class="muted small">شناسه‌ها در Netlify Blobs ذخیره می‌شوند و به هر Port ID متصل هستند.</p>
+          <div class="submissions" id="submissions"></div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">KaratShod Click · Netlify build · Consent-first UID Port System</footer>
+  </main>
+  <script src="/assets/panel.js"></script>
+</body>
+</html>
