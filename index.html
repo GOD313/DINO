@@ -1,43 +1,18 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DINO | Netlify Ready</title>
-  <meta name="description" content="DINO BotHub, Port Manager, Store Bot, Hiring Bot and Netlify-ready front." />
-  <style>
-    :root{--bg:#070914;--card:#101624;--text:#eef3ff;--muted:#a7b4d6;--brand:#62e6ff;--hot:#b46cff;--ok:#64f4a5}
-    *{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:radial-gradient(circle at top right,#163d57 0,#070914 38%,#05050a 100%);color:var(--text);line-height:1.9}.wrap{width:min(1120px,92vw);margin:auto;padding:38px 0}.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:center;min-height:78vh}.glass{background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 80px rgba(0,0,0,.36);border-radius:30px;padding:30px;backdrop-filter:blur(16px)}.badge{display:inline-flex;border:1px solid rgba(98,230,255,.35);background:rgba(98,230,255,.1);color:var(--brand);padding:8px 14px;border-radius:999px;font-size:13px}.title{font-size:clamp(36px,7vw,76px);line-height:1.05;margin:18px 0;background:linear-gradient(90deg,var(--brand),#fff,var(--hot));-webkit-background-clip:text;color:transparent}.lead{color:var(--muted);font-size:18px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.btn{border:0;border-radius:16px;padding:13px 18px;text-decoration:none;color:#041018;font-weight:800;background:linear-gradient(90deg,var(--brand),var(--ok));cursor:pointer}.btn.alt{color:var(--text);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}.mini{padding:18px;border-radius:22px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1)}.mini span{display:block;color:var(--muted);font-size:13px;margin-top:6px}.orb{height:420px;border-radius:36px;background:radial-gradient(circle at 30% 20%,rgba(98,230,255,.7),transparent 22%),radial-gradient(circle at 70% 70%,rgba(180,108,255,.75),transparent 24%),linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.03));position:relative;overflow:hidden}.orb:after{content:'DINO';position:absolute;inset:auto 22px 16px auto;font-size:64px;font-weight:900;letter-spacing:6px;color:rgba(255,255,255,.15)}form{display:grid;gap:12px}input,textarea,select{width:100%;border-radius:16px;border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.24);color:var(--text);padding:13px 14px;font:inherit}textarea{min-height:110px}.footer{color:var(--muted);font-size:13px;text-align:center;margin-top:28px}@media(max-width:850px){.hero,.grid{grid-template-columns:1fr}.orb{height:260px}.glass{padding:22px}}
-  </style>
-</head>
-<body>
-  <main class="wrap">
-    <section class="hero">
-      <div class="glass">
-        <span class="badge">🚀 GitHub + Netlify Ready</span>
-        <h1 class="title">DINO BotHub</h1>
-        <p class="lead">هاب مرکزی پورت‌ها، ربات فروشگاهی، ربات مدیریت استخدام و فرم درخواست؛ آماده Deploy روی Netlify و اتصال به cPanel/BotHub.</p>
-        <div class="actions"><a class="btn" href="#request">شروع درخواست</a><a class="btn alt" href="https://github.com/GOD313/DINO">مشاهده ریپو DINO</a></div>
-        <div class="grid"><div class="mini"><b>Port Hub</b><span>تقسیم مسیرها و اتصال سرویس‌ها</span></div><div class="mini"><b>Store Bot</b><span>ثبت سفارش و ارسال تلگرام</span></div><div class="mini"><b>Hiring Bot</b><span>مدیریت کارجو با گزارش امن</span></div></div>
-      </div>
-      <div class="orb"></div>
-    </section>
-    <section id="request" class="glass">
-      <h2>فرم سریع DINO</h2>
-      <form id="leadForm">
-        <input name="name" placeholder="نام و نام خانوادگی" required />
-        <input name="phone" placeholder="شماره تماس" required />
-        <select name="type"><option value="hiring">درخواست استخدام</option><option value="store">سفارش فروشگاهی</option><option value="port">درخواست پورت/سرویس</option></select>
-        <textarea name="message" placeholder="توضیحات"></textarea>
-        <button class="btn" type="submit">ارسال درخواست</button>
-      </form>
-      <p id="result" class="lead"></p>
-    </section>
-    <p class="footer">DINO Netlify front. Telegram relay requires environment variables in Netlify.</p>
-  </main>
-  <script>
-    const form=document.getElementById('leadForm'),result=document.getElementById('result');
-    form.addEventListener('submit',async e=>{e.preventDefault();result.textContent='در حال ارسال...';const payload=Object.fromEntries(new FormData(form).entries());try{const r=await fetch('/.netlify/functions/submit-order',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(payload)});const data=await r.json();result.textContent=data.ok?'درخواست ثبت شد ✅ کد: '+data.code:'ارسال نشد: '+(data.error||'خطا');if(data.ok)form.reset()}catch(err){result.textContent='فرانت آماده است؛ برای ارسال تلگرام، Function و ENV را در Netlify فعال کن.'}});
-  </script>
-</body>
-</html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DINO BotHub | Easy Deploy</title>
+<meta name="description" content="DINO central port dispatcher, store bot, hiring bot, and Telegram report.">
+<style>
+:root{--t:#eef4ff;--m:#a8b7d8;--a:#6df3ff;--b:#9b73ff;--c:#68ffae;--line:rgba(255,255,255,.16)}*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:radial-gradient(circle at 15% 0,rgba(109,243,255,.22),transparent 32%),radial-gradient(circle at 85% 6%,rgba(155,115,255,.20),transparent 30%),linear-gradient(180deg,#050713,#080d19 70%,#03040a);color:var(--t);line-height:1.9}.wrap{width:min(1120px,92vw);margin:auto;padding:34px 0 50px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:24px}.brand{font-weight:900}.pill{border:1px solid var(--line);background:rgba(255,255,255,.08);padding:8px 13px;border-radius:999px;color:var(--a);font-size:13px}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center}.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04));box-shadow:0 32px 90px rgba(0,0,0,.38);border-radius:30px;padding:28px;backdrop-filter:blur(16px)}h1{font-size:clamp(34px,7vw,76px);line-height:1.05;margin:16px 0;background:linear-gradient(90deg,var(--a),#fff,var(--b));-webkit-background-clip:text;color:transparent}.lead{color:var(--m);font-size:18px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}.mini{border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:22px;padding:17px}.mini span{display:block;color:var(--m);font-size:13px;margin-top:5px}.btn{display:inline-flex;border:0;border-radius:16px;padding:13px 18px;text-decoration:none;font-weight:900;cursor:pointer;color:#041018;background:linear-gradient(90deg,var(--a),var(--c))}.btn.alt{color:var(--t);background:rgba(255,255,255,.07);border:1px solid var(--line)}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.orb{height:320px;border-radius:34px;background:radial-gradient(circle at 35% 25%,var(--a),transparent 25%),radial-gradient(circle at 70% 70%,var(--b),transparent 30%),linear-gradient(135deg,rgba(255,255,255,.15),rgba(255,255,255,.03));display:grid;place-items:center;font-size:58px;font-weight:900;letter-spacing:5px}form{display:grid;gap:12px}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:16px;background:rgba(0,0,0,.25);color:var(--t);padding:13px;font:inherit}textarea{min-height:105px}.check{display:flex;gap:9px;align-items:flex-start;color:var(--m);font-size:14px}.check input{width:auto;margin-top:8px}.ok{color:var(--c)}.bad{color:#ff8b8b}.foot{text-align:center;color:var(--m);font-size:13px;margin-top:28px}@media(max-width:850px){.hero,.grid{grid-template-columns:1fr}.orb{height:220px}.card{padding:22px}}
+</style>
+</head><body><main class="wrap">
+<div class="top"><div class="brand">DINO BotHub</div><div class="pill">Netlify Ready</div></div>
+<section class="hero"><div class="card"><span class="pill">نصب آسان</span><h1>هاب مرکزی DINO</h1><p class="lead">تقسیم‌کننده مرکزی پورت، ربات فروشگاهی، ربات مدیریت استخدامی‌ها و ارسال گزارش خلاصه به تلگرام برای بررسی ادمین.</p><div class="actions"><a class="btn" href="#request">تست ارسال فرم</a><a class="btn alt" href="https://app.netlify.com/start/deploy?repository=https://github.com/GOD313/DINO">Deploy روی Netlify</a></div><div class="grid"><div class="mini"><b>Port Dispatcher</b><span>هدایت درخواست به پورت درست</span></div><div class="mini"><b>Store Bot</b><span>سفارش و پیگیری فروشگاه</span></div><div class="mini"><b>Hiring Bot</b><span>گزارش امن کارجو</span></div></div></div><div class="card"><div class="orb">DINO</div></div></section>
+<section id="request" class="card" style="margin-top:20px"><h2>فرم تست اتصال</h2><p class="lead">بعد از ثبت، اگر متغیرهای تلگرام را در Netlify گذاشته باشی، پیام به تلگرام ارسال می‌شود.</p><form id="f"><input name="name" placeholder="نام و نام خانوادگی" required><input name="phone" placeholder="شماره تماس" required><select name="type"><option value="hiring">استخدام / کارجو</option><option value="store">فروشگاه / سفارش</option><option value="port">پورت / سرویس</option></select><textarea name="message" placeholder="توضیحات"></textarea><label class="check"><input type="checkbox" name="consent" value="yes" required><span>قبول دارم اطلاعات فرم برای ثبت درخواست و بررسی ادمین ارسال شود.</span></label><button class="btn" type="submit">ارسال تست</button></form><p id="r" class="lead"></p></section>
+<p class="foot">توکن واقعی را داخل GitHub نگذار؛ فقط در Netlify Environment Variables وارد کن.</p>
+</main><script>
+const f=document.getElementById('f'),r=document.getElementById('r');
+f.addEventListener('submit',async e=>{e.preventDefault();r.textContent='در حال ارسال...';const p=Object.fromEntries(new FormData(f).entries());try{const res=await fetch('/.netlify/functions/submit-order',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(p)});const d=await res.json();if(d.ok){r.innerHTML='<span class="ok">ثبت شد. کد: '+d.code+'</span>';f.reset()}else{r.innerHTML='<span class="bad">خطا: '+(d.error||'ارسال نشد')+'</span>'}}catch(err){r.innerHTML='<span class="bad">Function فعال نیست یا متغیرهای Netlify تنظیم نشده‌اند.</span>'}});
+</script></body></html>
