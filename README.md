@@ -1,38 +1,29 @@
-# DINO
+# DINO Netlify Easy Deploy
 
-DINO BotHub + Port Manager + Store Bot + Hiring Bot
+این ریپو برای Deploy سریع DINO روی Netlify آماده است.
 
-این ریپو برای Deploy مستقیم روی Netlify آماده شد.
+## نصب از GitHub
 
-## نصب روی Netlify
-1. Netlify → Add new site → Import an existing project
-2. GitHub را انتخاب کن.
-3. ریپو `GOD313/DINO` را انتخاب کن.
-4. Deploy را بزن.
+1. Netlify را باز کن.
+2. Add new site را بزن.
+3. Import an existing project را انتخاب کن.
+4. ریپو GOD313/DINO را انتخاب کن.
+5. Build command را خالی بگذار.
+6. Publish directory را روی نقطه بگذار.
+7. Functions directory روی netlify/functions است.
 
-تنظیمات داخل `netlify.toml` آماده شده است:
+## بخش‌های نسخه نهایی
 
-```txt
-Build command: خالی
-Publish directory: .
-Functions directory: netlify/functions
-```
+- Central Port Dispatcher Bot برای تقسیم مسیر پورت‌ها.
+- Store Bot برای سفارش و پیگیری فروشگاه.
+- Hiring Manager Bot برای بررسی استخدامی‌ها با گزارش خلاصه و ایمن.
+- Netlify Front برای سایت سریع.
+- cPanel BotHub داخل فایل ZIP نهایی تحویل داده شده است.
 
-## اتصال تلگرام اختیاری
-در Netlify → Environment variables این دو مقدار را اضافه کن:
+## اتصال‌ها
 
-```env
-TELEGRAM_BOT_TOKEN=
-TELEGRAM_CHAT_ID=
-```
-
-## بخش‌های پروژه
-- cPanel full package: داخل فایل ZIP نهایی تحویل داده شده.
-- Netlify front: همین ریپو.
-- BotHub standalone: داخل فایل ZIP نهایی.
-- ChatGPT Ads Manager: ماژول آماده اما غیرفعال، چون فعلاً اکانت تبلیغاتی قابل‌دسترسی نبود.
+برای اتصال اعلان‌ها، مقدارهای محیطی موردنیاز را در پنل Netlify وارد کن. مقدار واقعی داخل ریپو ذخیره نشود.
 
 ## امنیت
-- لاگ شماره تماس در Netlify ماسک می‌شود.
-- هیچ توکن واقعی داخل ریپو ذخیره نشده است.
-- Ads Manager هیچ کمپین یا هزینه‌ای ایجاد نمی‌کند مگر بعداً با تایید دستی.
+
+شماره تماس در نسخه Netlify به‌صورت خلاصه ارسال می‌شود. اطلاعات کامل فقط در پنل cPanel و با رضایت و دسترسی ادمین بررسی می‌شود.
