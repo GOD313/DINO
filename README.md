@@ -8,11 +8,15 @@ DINO BotHub + Port Manager + Store Bot + Hiring Bot
 1. Netlify → Add new site → Import an existing project
 2. GitHub را انتخاب کن.
 3. ریپو `GOD313/DINO` را انتخاب کن.
-4. تنظیمات:
-   - Build command: خالی
-   - Publish directory: `.`
-   - Functions directory: `functions`
-5. Deploy را بزن.
+4. Deploy را بزن.
+
+تنظیمات داخل `netlify.toml` آماده شده است:
+
+```txt
+Build command: خالی
+Publish directory: .
+Functions directory: netlify/functions
+```
 
 ## اتصال تلگرام اختیاری
 در Netlify → Environment variables این دو مقدار را اضافه کن:
